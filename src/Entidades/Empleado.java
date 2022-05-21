@@ -58,4 +58,52 @@ public class Empleado {
 		this.nombre=nombre;
 		
 	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre=nombre;
+	}
+	
+	public int getDocumento() {
+		return this.Documento;
+	}
+	
+	public void setDocumento(int Documento) {
+		this.Documento=Documento;
+	}
+	
+	public String getDependencia() {
+		return this.Dependencia;
+	}
+	
+	public void setDependencia(String Dependencia) {
+		this.Dependencia=Dependencia;
+	}
+	
+	public String getCargo() {
+		return this.cargo;
+	}
+	
+	public void setCargo(String cargo) {
+		this.cargo=cargo;
+	}
+	
+	public String getSalariosMinimos() {
+		return this.SalariosMinimos;
+	}
+	
+	public void setSalariosMinimo(String Salarios) {
+		this.SalariosMinimos=Salarios;
+	}
+	
+	public double getValorhora() {
+		return this.valorHora;
+	}
+	
+	public void setValorHora(double valorhora) {
+		this.valorHora=valorhora;
+	}
 }
