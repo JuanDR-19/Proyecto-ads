@@ -11,4 +11,12 @@ public class Profesor extends Empleado {
 	public Profesor(int escalafon) {
 		this.escalafon=escalafon;
 	}
+	
+	public void SetEscalafon(int escalafon) {
+		this.escalafon=escalafon;
+	}
+	
+	public int GetEscalafon() {
+		return this.escalafon;
+	}
 }

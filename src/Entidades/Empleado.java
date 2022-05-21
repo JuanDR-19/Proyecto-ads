@@ -1,4 +1,6 @@
 package Entidades;
+import java.util.ArrayList;
+import otros.asignatura;
 
 public class Empleado {
 
@@ -8,6 +10,7 @@ public class Empleado {
 	private String cargo;
 	private String SalariosMinimos;
 	private double valorHora;
+	private ArrayList<asignatura> asignaturas= new ArrayList<asignatura>();
 	
 	
 	public Empleado() {
@@ -106,4 +109,15 @@ public class Empleado {
 	public void setValorHora(double valorhora) {
 		this.valorHora=valorhora;
 	}
+	
+	public ArrayList<asignatura> getAsignaturas() {
+		return this.asignaturas;
+	}
+	
+	public void AñadirAsignatura(String nombre, int horas) {
+		asignatura asignatura= new asignatura(horas,nombre);
+		asignaturas.add(asignatura);
+	}
+	
+	
 }
