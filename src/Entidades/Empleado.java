@@ -8,16 +8,17 @@ public class Empleado {
 	private int Documento;
 	private String Dependencia;
 	private String cargo;
-	private String SalariosMinimos;
+	private int SalariosMinimos;
 	private double valorHora;
-	private ArrayList<asignatura> asignaturas= new ArrayList<asignatura>();
+	protected ArrayList<asignatura> asignaturas= new ArrayList<asignatura>();
+	private static float SMLV=1000000;
 	
 	
 	public Empleado() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Empleado(String nombre, int documento, String dependencia, String cargo, String salarios, double valor) {
+	public Empleado(String nombre, int documento, String dependencia, String cargo, int salarios, double valor) {
 		this.nombre=nombre;
 		this.Documento=documento;
 		this.Dependencia=dependencia;
@@ -26,7 +27,7 @@ public class Empleado {
 		this.valorHora=valor;
 	}
 	
-	public Empleado(String nombre, int documento, String dependencia, String cargo, String salarios) {
+	public Empleado(String nombre, int documento, String dependencia, String cargo, int salarios) {
 		this.nombre=nombre;
 		this.Documento=documento;
 		this.Dependencia=dependencia;
@@ -94,11 +95,11 @@ public class Empleado {
 		this.cargo=cargo;
 	}
 	
-	public String getSalariosMinimos() {
+	public int getSalariosMinimos() {
 		return this.SalariosMinimos;
 	}
 	
-	public void setSalariosMinimo(String Salarios) {
+	public void setSalariosMinimo(int Salarios) {
 		this.SalariosMinimos=Salarios;
 	}
 	
@@ -118,6 +119,20 @@ public class Empleado {
 		asignatura asignatura= new asignatura(horas,nombre);
 		asignaturas.add(asignatura);
 	}
+	
+	public float getSMLV() {
+		return SMLV;
+	}
+	
+	public String CalcularSalario() {
+		int q=this.getSalariosMinimos();
+		float salario=(float) (getSMLV()*0.88*q);
+		return  "El empleado "+getNombre()+" devenga un salario total de: "+ salario;
+	}
+	
+	
+	
+	
 	
 	
 }
