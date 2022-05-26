@@ -29,8 +29,8 @@ public class controlador {
 		nominaUsar.adicionarAsignaturaEmpleado(nombreAsignatura, horas, documento);
 	}
 	
-	public void  calcularSalarioEmpleado (nomina nominaActual, int tipo){
-		
+	public void  calcularSalarioEmpleado (nomina nominaActual, int documento){
+		nominaUsar.calcularSalarioEmpleado(documento);
 	}
 	
 	
