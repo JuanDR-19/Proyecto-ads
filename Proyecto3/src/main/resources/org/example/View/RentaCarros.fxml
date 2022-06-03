@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.View.Controller.ControllerRentaCarros">
+   <children>
+      <Label layoutX="363.0" layoutY="14.0" prefHeight="50.0" prefWidth="129.0" text="Renta Carros">
+         <font>
+            <Font name="Arial Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="32.0" layoutY="64.0" prefHeight="408.0" prefWidth="823.0">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="823.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                  <AnchorPane layoutX="23.0" layoutY="26.0" prefHeight="611.0" prefWidth="770.0" style="-fx-background-color: white;">
+                     <children>
+                        <Separator layoutX="354.0" orientation="VERTICAL" prefHeight="398.0" prefWidth="4.0" />
+                        <Label layoutX="21.0" layoutY="117.0" text="Fecha Renta:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="fecha" layoutX="150.0" layoutY="117.0" prefHeight="19.0" prefWidth="167.0" text="-------------------------------">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="158.0" text="Seleccione carro por">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="175.0" text="número de puestos:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="250.0" text="Cantidad:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="Button_AgregarLinea" layoutX="130.0" layoutY="315.0" mnemonicParsing="false" onAction="#agregarLinea" style="-fx-background-color: #ffcbdb;" text="Agregar Linea" />
+                        <TextField fx:id="cantidadCarro" layoutX="179.0" layoutY="246.0" prefHeight="26.0" prefWidth="56.0" text="1" />
+                        <Label layoutX="369.0" layoutY="28.0" text="Líneas de la Renta:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="Button_EliminarLinea" layoutX="374.0" layoutY="327.0" mnemonicParsing="false" onAction="#eliminarLinea" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #ffcbdb;" text="Eliminar Linea" />
+                        <Label layoutX="575.0" layoutY="330.0" text="Total Renta:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalRenta" alignment="CENTER" layoutX="704.0" layoutY="330.0" prefHeight="19.0" prefWidth="58.0" text="0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="419.0" text="Denominaciones:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="denominaciones" layoutX="149.0" layoutY="415.0" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #ffe5f0;" />
+                        <Label layoutX="307.0" layoutY="419.0" text="Cantidad:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cantidadBilletes" layoutX="393.0" layoutY="415.0" prefHeight="26.0" prefWidth="56.0" promptText="5" />
+                        <Button fx:id="Button_AgregarBillete" layoutX="472.0" layoutY="415.0" mnemonicParsing="false" onAction="#agregarBillete" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #ffcbdb;" text="Agregar Billete" />
+                        <Label layoutX="595.0" layoutY="410.0" text="Saldo Billetes ">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="595.0" layoutY="427.0" text="Ingresados">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="Button_TerminarRenta" layoutX="250.0" layoutY="477.0" mnemonicParsing="false" onAction="#terminarRenta" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #ffcbdb;" text="Terminar Renta" />
+                        <Label fx:id="saldoBilletes" layoutX="726.0" layoutY="419.0" text="30000">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="Button_GenerarReporte" layoutX="311.0" layoutY="528.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #ffcbdb;" text="Generar Reporte" />
+                        <Label layoutX="378.0" layoutY="480.0" text="Vueltas:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="vueltas" layoutX="462.0" layoutY="480.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="103.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/calendario.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="138.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/asiento.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="125.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/carro.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="120.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/Billetes.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="365.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/Billetes.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="272.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/Reporte.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="218.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/Renta.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="647.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/Renta.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="Button_NuevaRenta" layoutX="138.0" layoutY="74.0" mnemonicParsing="false" onAction="#nuevaRenta" style="-fx-background-color: #ffcbdb;" text="Nueva Renta" />
+                        <ComboBox fx:id="carroXPuestos" layoutX="176.0" layoutY="164.0" onAction="#mostrarPuestosXPlaca" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: #ffe5f0;" />
+                        <Label layoutX="193.0" layoutY="202.0" text="Puestos:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="puestosLabel" layoutX="261.0" layoutY="202.0" prefHeight="19.0" prefWidth="46.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane layoutX="372.0" layoutY="74.0" prefHeight="241.0" prefWidth="386.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="379.0">
+                                 <children>
+                                    <TableView fx:id="tablaLinea" prefHeight="258.0" prefWidth="395.0">
+                                       <columns>
+                                          <TableColumn fx:id="columPlaca" editable="false" prefWidth="90.4000244140625" text="Placas Carro">
+                                             <cellValueFactory>
+                                                <javafx.scene.control.cell.PropertyValueFactory property="PlacaCarroRentado" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn fx:id="columCantidad" editable="false" prefWidth="96.0" text="Cantidad">
+                                             <cellValueFactory>
+                                                <javafx.scene.control.cell.PropertyValueFactory property="Cantidad" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn fx:id="columPrecio" editable="false" prefWidth="98.0" text="Precio">
+                                             <cellValueFactory>
+                                                <javafx.scene.control.cell.PropertyValueFactory property="PrecioCarro" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn fx:id="columSubTotal" editable="false" prefWidth="111.0" text="SubTotal">
+                                             <cellValueFactory>
+                                                <javafx.scene.control.cell.PropertyValueFactory property="SubTotal" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Label fx:id="totalRenta1" layoutX="691.0" layoutY="330.0" text="\$">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="21.0" layoutY="29.0" text="Consultar Renta">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numRenta" layoutX="157.0" layoutY="26.0" prefHeight="19.0" prefWidth="45.0" promptText="0" />
+                        <Button fx:id="btnConsultar" layoutX="257.0" layoutY="26.0" mnemonicParsing="false" onAction="#consultarRenta" style="-fx-background-color: #ffcbdb;" text="Consultar" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
